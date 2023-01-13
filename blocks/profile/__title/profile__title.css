@@ -1,8 +1,9 @@
 .profile__info-title {
+  max-width: 294px;
   font-style: normal;
   font-weight: 500;
   font-size: 42px;
-  line-height: 48px;
+  line-height: 39px;
   margin: 0;
   padding: 0; 
 }
@@ -10,8 +11,9 @@
 
 @media screen and (max-width: 1023px) {
   .profile__info-title {
-    font-size: 27px;
+    font-size: 26px;
     line-height: 33px;
+   
   }
 }
 

@@ -1,19 +1,18 @@
 .profile__info {
-  max-width: 336px;
   display: flex;
+  flex-direction: column;
+  max-width: 336px;
   width: 100%;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 16px 18px;
   margin-left: 30px;
+  row-gap: 16px;
 
 }
 
 @media screen and (max-width: 1023px) {
   .profile__info {
-    justify-content: center;
+    align-items: center;
     max-width: 282px;
-    gap: 14px 10px;
+    row-gap: 14px;
     margin: 26px auto 0;
   }
 }

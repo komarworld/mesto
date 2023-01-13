@@ -15,8 +15,10 @@
       <section class="profile">
         <img class="profile__avatar" src="./images/Cousteau_image.jpg" alt="Фото Ив Кусто">
         <div class="profile__info">
-          <h1 class="profile__info-title">Жак-Ив Кусто</h1>
-          <button class="profile__edit-button" type="button"></button>
+          <div class="profile__info-container">
+            <h1 class="profile__info-title">Жак-Ив Кусто</h1>
+            <button class="profile__edit-button" type="button"></button>
+          </div>
           <p class="profile__info-subtitle">Исследователь океана</p>
         </div>
         <button class="profile__add-button" type="button"></button>
@@ -25,40 +27,40 @@
       <section class="cards" aria-label="Секция с картинками">
         <ul class="cards__list">
           <li class="cards__item">
-            <img class="cards__item-image" src="./images/kirill-pershin-1556355-unsplash.png" alt="Картинка">
+            <img class="cards__item-image" src="./images/Pic_Novo (1).jpg" alt="Картинка">
             <div class="cards__item-info">
               <p class="cards__item-caption">Новороссийск</p>
               <button class="cards__item-like" type="button"></button>
             </div>
           </li>
           <li class="cards__item">
-            <img class="cards__item-image" src="./images/kirill-pershin-1556355-unsplash.png" alt="Картинка">
+            <img class="cards__item-image" src="./images//Pic_Karacha.jpg" alt="Картинка">
             <div class="cards__item-info">
               <p class="cards__item-caption">Карачаево-Черкесия</p>
               <button class="cards__item-like" type="button"></button>
             </div>
           </li><li class="cards__item">
-            <img class="cards__item-image" src="./images/kirill-pershin-1556355-unsplash.png" alt="Картинка">
+            <img class="cards__item-image" src="./images/Pic_Soci (1).jpg" alt="Картинка">
             <div class="cards__item-info">
               <p class="cards__item-caption">Сочи</p>
               <button class="cards__item-like" type="button"></button>
             </div>
           </li><li class="cards__item">
-            <img class="cards__item-image" src="./images/kirill-pershin-1556355-unsplash.png" alt="Картинка">
+            <img class="cards__item-image" src="./images/Pic_Elbrus.jpg" alt="Картинка">
             <div class="cards__item-info">
               <p class="cards__item-caption">гора Эльбрус</p>
               <button class="cards__item-like" type="button"></button>
             </div>
           </li><li class="cards__item">
-            <img class="cards__item-image" src="./images/kirill-pershin-1556355-unsplash.png" alt="Картинка">
+            <img class="cards__item-image" src="./images/Pic_Krasnodar.jpeg" alt="Картинка">
             <div class="cards__item-info">
               <p class="cards__item-caption">Краснодар</p>
               <button class="cards__item-like" type="button"></button>
             </div>
           </li><li class="cards__item">
-            <img class="cards__item-image" src="./images/kirill-pershin-1556355-unsplash.png" alt="Картинка">
+            <img class="cards__item-image" src="./images/Pic_Psebai.jpg" alt="Картинка">
             <div class="cards__item-info">
-              <p class="cards__item-caption">Псибай</p>
+              <p class="cards__item-caption">Псебай</p>
               <button class="cards__item-like" type="button"></button>
             </div>
           </li>
@@ -78,12 +80,13 @@
         <button class="button popup__close-btn" type="button"></button>
         <h2 class="popup__heading">Редактировать&nbsp;профиль</h2>
         <form class="popup__form">
-          <input class="form__form-input" type="text" placeholder="Имя" name="first-name">
-          <input class="form__form-input" type="text" placeholder="Род деятельности" name="activity">
+          <input class="form__form-input form__input-name" type="text" placeholder="Имя" name="first-name" value = "Жак-Ив Кусто">
+          <input class="form__form-input form__input-job" type="text" placeholder="Род деятельности" name="activity" value="Исследователь океана">
           <button class="button popup__submit-btn" type="submit">Сохранить</button>
         </form>
       </div>
     </section>
-  
+
+    <script src="./script/index.js"></script>
 </body>
 </html>

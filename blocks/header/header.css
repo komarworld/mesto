@@ -1,9 +1,11 @@
 .header {
+  display: flex;
   max-width: 880px;
   margin: 0 auto;
   padding: 0;
   width: 100%; 
   border-bottom: 1px solid #545454;
+ 
 
 }
 
