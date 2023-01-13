@@ -1,4 +1,5 @@
 .cards__item-like {
+  background: none;
   background-image: url(../../../images/like.svg);
   background-position: center;
   background-repeat: no-repeat;
