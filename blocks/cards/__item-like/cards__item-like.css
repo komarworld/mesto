@@ -6,6 +6,11 @@
   border: none;
   max-width: 22px;
   width: 100%;
-  min-height: 19px;
   padding: 0;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.cards__item-like:hover {
+  opacity: 0.6;
 }

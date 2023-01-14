@@ -13,54 +13,54 @@
     </header>
     <main>
       <section class="profile">
-        <img class="profile__avatar" src="./images/Cousteau_image.jpg" alt="Фото Ив Кусто">
+        <img class="profile__avatar" src="./images/Cousteau_image.jpg" alt="Аватарка">
         <div class="profile__info">
           <div class="profile__info-container">
             <h1 class="profile__info-title">Жак-Ив Кусто</h1>
-            <button class="profile__edit-button" type="button"></button>
+            <button class="profile__edit-button" type="button" aria-label="Редактировать"></button>
           </div>
           <p class="profile__info-subtitle">Исследователь океана</p>
         </div>
-        <button class="profile__add-button" type="button"></button>
+        <button class="profile__add-button" type="button" aria-label="Добавить"></button>
       </section>
 
       <section class="cards" aria-label="Секция с картинками">
         <ul class="cards__list">
           <li class="cards__item">
-            <img class="cards__item-image" src="./images/Pic_Novo.jpg" alt="Картинка">
+            <img class="cards__item-image" src="./images/Pic_Novo.jpg" alt="Новороссийск">
             <div class="cards__item-info">
-              <p class="cards__item-caption">Новороссийск</p>
+              <h2 class="cards__item-caption">Новороссийск</h2>
               <button class="cards__item-like" type="button"></button>
             </div>
           </li>
           <li class="cards__item">
-            <img class="cards__item-image" src="./images//Pic_Karacha.jpg" alt="Картинка">
+            <img class="cards__item-image" src="./images//Pic_Karacha.jpg" alt="Горы Карачаево">
             <div class="cards__item-info">
-              <p class="cards__item-caption">Карачаево-Черкесия</p>
+              <h2 class="cards__item-caption">Карачаево-Черкесия</h2>
               <button class="cards__item-like" type="button"></button>
             </div>
           </li><li class="cards__item">
-            <img class="cards__item-image" src="./images/Pic_Soci.jpg" alt="Картинка">
+            <img class="cards__item-image" src="./images/Pic_Soci.jpg" alt="Сочи Парк">
             <div class="cards__item-info">
-              <p class="cards__item-caption">Сочи</p>
+              <h2 class="cards__item-caption">Сочи</h2>
               <button class="cards__item-like" type="button"></button>
             </div>
           </li><li class="cards__item">
-            <img class="cards__item-image" src="./images/Pic_Elbrus.jpg" alt="Картинка">
+            <img class="cards__item-image" src="./images/Pic_Elbrus.jpg" alt="Эльбрус">
             <div class="cards__item-info">
-              <p class="cards__item-caption">гора Эльбрус</p>
+              <h2 class="cards__item-caption">гора Эльбрус</h2>
               <button class="cards__item-like" type="button"></button>
             </div>
           </li><li class="cards__item">
-            <img class="cards__item-image" src="./images/Pic_Krasnodar.jpeg" alt="Картинка">
+            <img class="cards__item-image" src="./images/Pic_Krasnodar.jpeg" alt="парк Краснодар">
             <div class="cards__item-info">
-              <p class="cards__item-caption">Краснодар</p>
+              <h2 class="cards__item-caption">Краснодар</h2>
               <button class="cards__item-like" type="button"></button>
             </div>
           </li><li class="cards__item">
-            <img class="cards__item-image" src="./images/Pic_Psebai.jpg" alt="Картинка">
+            <img class="cards__item-image" src="./images/Pic_Psebai.jpg" alt="Псебай">
             <div class="cards__item-info">
-              <p class="cards__item-caption">Псебай</p>
+              <h2 class="cards__item-caption">Псебай</h2>
               <button class="cards__item-like" type="button"></button>
             </div>
           </li>
@@ -75,17 +75,17 @@
     
     <!--Popup edit profile-->
 
-    <section class="popup">
+    <div class="popup">
       <div class="popup__container">
-        <button class="button popup__close-btn" type="button"></button>
+        <button class="popup__close-btn" type="button" aria-label="Закрыть"></button>
         <h2 class="popup__heading">Редактировать&nbsp;профиль</h2>
-        <form class="popup__form">
-          <input class="popup__input popup__input_type_name" type="text" placeholder="Имя" name="first-name" value = "Жак-Ив Кусто">
-          <input class="popup__input popup__input_type_job" type="text" placeholder="Род деятельности" name="activity" value="Исследователь океана">
+        <form class="popup__form" name="profile-form" method="post">
+          <input class="popup__input popup__input_type_name" type="text" placeholder="Имя" name="first-name">
+          <input class="popup__input popup__input_type_job" type="text" placeholder="Род деятельности" name="activity">
           <button class="button popup__submit-btn" type="submit">Сохранить</button>
         </form>
       </div>
-    </section>
+    </div>
 
     <script src="./script/index.js"></script>
 </body>
