@@ -10,7 +10,6 @@ let closePopup = popupElement.querySelector('.popup__close-btn')
 
 function editClick () {
   popupElement.classList.add('popup_opened');
-  console.dir(popupElement)  
   nameInput.value = profileName.textContent
   jobInput.value = profileJob.textContent
 }
