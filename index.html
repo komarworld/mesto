@@ -26,44 +26,7 @@
 
       <section class="cards" aria-label="Секция с картинками">
         <ul class="cards__list">
-          <li class="cards__item">
-            <img class="cards__item-image" src="./images/Pic_Novo.jpg" alt="Новороссийск">
-            <div class="cards__item-info">
-              <h2 class="cards__item-caption">Новороссийск</h2>
-              <button class="cards__item-like" type="button"></button>
-            </div>
-          </li>
-          <li class="cards__item">
-            <img class="cards__item-image" src="./images//Pic_Karacha.jpg" alt="Горы Карачаево">
-            <div class="cards__item-info">
-              <h2 class="cards__item-caption">Карачаево-Черкесия</h2>
-              <button class="cards__item-like" type="button"></button>
-            </div>
-          </li><li class="cards__item">
-            <img class="cards__item-image" src="./images/Pic_Soci.jpg" alt="Сочи Парк">
-            <div class="cards__item-info">
-              <h2 class="cards__item-caption">Сочи</h2>
-              <button class="cards__item-like" type="button"></button>
-            </div>
-          </li><li class="cards__item">
-            <img class="cards__item-image" src="./images/Pic_Elbrus.jpg" alt="Эльбрус">
-            <div class="cards__item-info">
-              <h2 class="cards__item-caption">гора Эльбрус</h2>
-              <button class="cards__item-like" type="button"></button>
-            </div>
-          </li><li class="cards__item">
-            <img class="cards__item-image" src="./images/Pic_Krasnodar.jpeg" alt="парк Краснодар">
-            <div class="cards__item-info">
-              <h2 class="cards__item-caption">Краснодар</h2>
-              <button class="cards__item-like" type="button"></button>
-            </div>
-          </li><li class="cards__item">
-            <img class="cards__item-image" src="./images/Pic_Psebai.jpg" alt="Псебай">
-            <div class="cards__item-info">
-              <h2 class="cards__item-caption">Псебай</h2>
-              <button class="cards__item-like" type="button"></button>
-            </div>
-          </li>
+           <!--сюда добавиться template-->
         </ul>
       </section>
     </main> 
@@ -75,17 +38,55 @@
     
     <!--Popup edit profile-->
 
-    <div class="popup">
+    <div class="popup popup_profile">
       <div class="popup__container">
         <button class="popup__close-btn" type="button" aria-label="Закрыть"></button>
         <h2 class="popup__heading">Редактировать&nbsp;профиль</h2>
         <form class="popup__form" name="profile-form" method="post">
-          <input class="popup__input popup__input_type_name" type="text" placeholder="Имя" name="first-name">
-          <input class="popup__input popup__input_type_job" type="text" placeholder="Род деятельности" name="activity">
+          <input class="popup__input popup__input_name" type="text" placeholder="Имя" name="first-name">
+          <input class="popup__input popup__input_job" type="text" placeholder="Род деятельности" name="activity">
           <button class="button popup__submit-btn" type="submit">Сохранить</button>
         </form>
       </div>
     </div>
+
+     <!--Popup new card-->
+
+    <div class="popup popup_card">
+      <div class="popup__container">
+        <button class="popup__close-btn" type="button" aria-label="Закрыть"></button>
+        <h2 class="popup__heading">Новое&nbsp;место</h2>
+        <form class="popup__form" name="profile-form" method="post">
+          <input class="popup__input popup__input_title" type="text" placeholder="Название" name="title">
+          <input class="popup__input popup__input_link" type="text" placeholder="Ссылка на картинку" name="link">
+          <button class="button popup__submit-btn" type="submit">Сохранить</button>
+        </form>
+      </div>
+    </div>
+
+       <!--Popup image-->
+
+       <div class="popup popup_image">
+        <div class="popup__container-image">
+          <button class="popup__close-btn" type="button" aria-label="Закрыть"></button>
+          <img src="#" alt="#" class="popup__pic">
+          <h2 class="popup__pic-caption"></h2>
+        </div>
+      </div>
+
+      
+    <!--template-->
+
+    <template class="template-cards">
+      <li class="cards__item">
+        <button class="cards__item-delete" type="button"></button>
+        <img class="cards__item-image" src="#" alt="Новороссийск">
+        <div class="cards__item-info">
+          <h2 class="cards__item-caption"></h2>
+          <button class="cards__item-like" type="button"></button>
+        </div>
+      </li>
+    </template>
 
     <script src="./script/index.js"></script>
 </body>
