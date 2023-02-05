@@ -23,10 +23,11 @@ const profileName = document.querySelector ('.profile__info-title')
 const profileJob = document.querySelector ('.profile__info-subtitle')
 const cardAdd = document.querySelector ('.profile__add-button')
 
-const closeBtn = (document.querySelectorAll('.popup__close-btn'))
+const closeBtns = (document.querySelectorAll('.popup__close-btn'))
 
 const templateCard = document.querySelector ('.template-cards').content.querySelector ('.cards__item') //обращаемся к template//
 const cardPlace = document.querySelector ('.cards__list')
+const cardName = templateCard.querySelector ('.cards__item-caption')
 
 
 const popupProfile = document.querySelector ('.popup_profile')
@@ -43,7 +44,9 @@ const linkCardInput =popupCard.querySelector ('.popup__input_link')
 
 
 const popupImage = document.querySelector ('.popup_image')
-const popupPicIncrease = popupImage.querySelector('.popup__pic');
+const popupImagePic = popupImage.querySelector('.popup__pic');
+const popupImageCaption = popupImage.querySelector('.popup__pic-caption');
+
 
 //открытие popup//
 function openPop (popup) {
@@ -62,10 +65,11 @@ editProfile.addEventListener ('click', ()=>{
   jobInput.value = profileJob.textContent 
 }); 
 
-closeBtn.forEach(function(button) {
+//закрытие любой формы //
+closeBtns.forEach(function(button) {
   const popup = button.closest('.popup')
   button.addEventListener ('click', ()=> closePop (popup))
-}); //закрытие любой формы //
+});
 
 cardAdd.addEventListener ('click', ()=> openPop(popupCard)); //откртыие формы карточки//
 
@@ -115,9 +119,9 @@ function createCard (item) {
     card.querySelector('.cards__item-image').addEventListener('click',() =>{
     
     openPop (popupImage);
-    popupPicIncrease.src =item.link;
-    popupPicIncrease.alt =item.name;
-    popupImage.querySelector ('.popup__pic-caption').textContent = item.name
+    popupImagePic.src =item.link;
+    popupImagePic.alt =item.name;
+    popupImageCaption.textContent = item.name
     });
 
     return card;
