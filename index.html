@@ -38,19 +38,19 @@
     
     <!--Popup edit profile-->
 
-    <div class="popup popup_profile">
-      <div class="popup__container">
-        <button class="popup__close-btn" type="button" aria-label="Закрыть"></button>
-        <h2 class="popup__heading">Редактировать&nbsp;профиль</h2>
-        <form class="popup__form" name="form-profile" method="post" novalidate>
-          <input id="form-name" class="popup__input popup__input_name" type="text" placeholder="Имя" name="name" minlength="2" maxlength="40" required>
-            <span class="popup__input-error form-name-error" >Текст должен быть не короче 2 симв. Длина текста сейчас: 1 символ.</span>
-          <input id="form-job" class="popup__input popup__input_job" type="text" placeholder="Род деятельности" name="job" minlength="2" maxlength="40" required>
-            <span class="popup__input-error form-job-error" ></span>
-          <button class="button popup__submit-btn" type="submit">Сохранить</button>
-        </form>
+      <div class="popup popup_profile">
+        <div class="popup__container">
+          <button class="popup__close-btn" type="button" aria-label="Закрыть"></button>
+          <h2 class="popup__heading">Редактировать&nbsp;профиль</h2>
+          <form class="popup__form" name="form-profile" method="post" novalidate>
+            <input id="form-name" class="popup__input popup__input_name" type="text" placeholder="Имя" name="name" minlength="2" maxlength="40" required>
+              <span class="popup__input-error form-name-error" ></span>
+            <input id="form-job" class="popup__input popup__input_job" type="text" placeholder="Род деятельности" name="job" minlength="2" maxlength="40" required>
+              <span class="popup__input-error form-job-error" ></span>
+            <button class="button popup__submit-btn" type="submit">Сохранить</button>
+          </form>
+        </div>
       </div>
-    </div>
 
      <!--Popup new card-->
 
@@ -61,7 +61,7 @@
         <form class="popup__form" name="form-card" method="post" novalidate>
           <input id="form-title" class="popup__input popup__input_title" type="text" placeholder="Название" name="title"  minlength="2" maxlength="30" required>
             <span class="popup__input-error form-title-error" ></span>
-          <input id= "form-link" class="popup__input popup__input_link" type="text" placeholder="Ссылка на картинку" name="link" required>
+          <input id= "form-link" class="popup__input popup__input_link" type="url" placeholder="Ссылка на картинку" name="link" required>
             <span class="popup__input-error form-link-error" ></span>
           <button class="button popup__submit-btn" type="submit">Сохранить</button>
         </form>
@@ -93,5 +93,6 @@
     </template>
 
     <script src="./script/index.js"></script>
+    <script src="./script/validate.js"></script>
 </body>
 </html>

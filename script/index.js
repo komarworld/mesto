@@ -51,11 +51,13 @@ const popupImageCaption = popupImage.querySelector('.popup__pic-caption');
 //открытие popup//
 function openPop (popup) {
   popup.classList.add('popup_opened');
+  document.addEventListener('keydown', closeByEscape);
 };
 
 //закрытие  popup//
 function closePop (popup) {
   popup.classList.remove('popup_opened');
+  document.removeEventListener('keydown', closeByEscape);
 };
 
 //открыть редактирование формы//
@@ -136,3 +138,19 @@ function renderCards (item) {
   }
 
 renderCards (cardsArr);
+
+//закрытие по esc//
+function closeByEscape(evt) {  
+  if (evt.key === 'Escape') {
+    const openedPopup = document.querySelector('.popup_opened')
+    closePop(openedPopup)
+  }
+}
+const popups = document.querySelectorAll(".popup")
+popups.forEach((popup) => {
+  popup.addEventListener('click', (evt) => {
+    if (evt.target === popup) {
+      closePop(popup)
+    }
+  })
+  });
