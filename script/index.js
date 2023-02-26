@@ -65,6 +65,7 @@ editProfile.addEventListener ('click', ()=>{
   openPop(popupProfile); 
   nameInput.value = profileName.textContent 
   jobInput.value = profileJob.textContent 
+  resetValid(formProfile, validationConfig)
 }); 
 
 //закрытие любой формы //
@@ -73,7 +74,12 @@ closeBtns.forEach(function(button) {
   button.addEventListener ('click', ()=> closePop (popup))
 });
 
-cardAdd.addEventListener ('click', ()=> openPop(popupCard)); //откртыие формы карточки//
+ //откртыие формы карточки//
+cardAdd.addEventListener ('click', ()=> {
+  formCard.reset()
+  resetValid(formCard, validationConfig)
+  openPop(popupCard)
+})
 
 //отправка формы профиля//
 function handleFormSubmit (evt) {
@@ -119,25 +125,36 @@ function createCard (item) {
 
     //увеличение карточки//
     card.querySelector('.cards__item-image').addEventListener('click',() =>{
-    
-    openPop (popupImage);
+       
     popupImagePic.src =item.link;
     popupImagePic.alt =item.name;
     popupImageCaption.textContent = item.name
+    openPop (popupImage);
     });
 
     return card;
 };
 
  //добавляем 6 карточек из массива//
+function renderCards () {
+  cardsArr.forEach (function(item){
+    const newCard = createCard (item)
+    cardPlace.append (newCard)
+  })
+}
+renderCards (cardsArr);
+
+/* прошлый варинт добавления 6 карточек
 function renderCards (item) {
-  const cards = cardsArr.map((item) => {
+  const cards = cardsArr.forEach((item) => {
     return createCard (item)
   });
   cardPlace.append (...cards)
   }
+*/
+  
 
-renderCards (cardsArr);
+
 
 //закрытие по esc//
 function closeByEscape(evt) {  
@@ -154,3 +171,4 @@ popups.forEach((popup) => {
     }
   })
   });
+

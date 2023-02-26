@@ -31,38 +31,37 @@ const checkInputValidity = (formElement, inputElement, config) => {
     removeInputError(formElement,inputElement, config)
   }
  }
- const hasInvalidInput = (inputArr) =>{
-  return inputArr.some((inputElement) => {
-    return !inputElement.validity.valid
-  })
-}
 
 
-const setEventListeners =(formElement, config)=> {
+const setEventListeners = (formElement, config)=> {
   const inputArr= Array.from(formElement.querySelectorAll(config.inputSelector))
-  const SubmitButton = formElement.querySelector(config.submitButtonSelector)
-  toggleButtonState (inputArr, SubmitButton, config) 
+  const submitButton = formElement.querySelector(config.submitButtonSelector)
+  toggleButtonState (inputArr, submitButton, config) 
 
   inputArr.forEach((inputElement)=>{
   inputElement.addEventListener ('input', function(){
     checkInputValidity (formElement, inputElement, config )
-    toggleButtonState (inputArr, SubmitButton, config) 
+    toggleButtonState (inputArr, submitButton, config) 
 });
 });
 }
 
+const resetValid = (formElement, config) => {
+  const inputArr= Array.from(formElement.querySelectorAll(config.inputSelector))
+  const submitButton = formElement.querySelector(config.submitButtonSelector)
+  toggleButtonState (inputArr, submitButton, config) 
 
-const toggleButtonState = (inputArr, SubmitButton, config) =>{
-  if (hasInvalidInput(inputArr)) {
-    SubmitButton.classList.add(config.inactiveButtonClass)
-    SubmitButton.setAttribute ("disabled", true)
-  }
-  else {  
-    SubmitButton.classList.remove(config.inactiveButtonClass)
-    SubmitButton.removeAttribute("disabled")
-  }
+  inputArr.forEach((inputElement) => {
+    removeInputError(formElement, inputElement, config)
+  })
+ 
+};
+
+const hasInvalidInput = (inputArr) =>{
+  return inputArr.some((inputElement) => {
+    return !inputElement.validity.valid
+  })
 }
-
 
 const formValidation = (config)=>{
 const formArr =Array.from(document.querySelectorAll(config.formSelector))
@@ -72,6 +71,17 @@ formArr.forEach((formElement)=> {
   });
 setEventListeners (formElement, config) 
 });
+}
+
+const toggleButtonState = (inputArr, submitButton, config) =>{
+  if (hasInvalidInput(inputArr)) {
+    submitButton.classList.add(config.inactiveButtonClass)
+    submitButton.setAttribute ("disabled", true)
+  }
+  else {  
+    submitButton.classList.remove(config.inactiveButtonClass)
+    submitButton.removeAttribute("disabled")
+  }
 }
 
 formValidation (validationConfig);
