@@ -33,21 +33,21 @@ export default class Card {
     this._toggleLikeButton();
   })
 
-  this._element.querySelector('.cards__item-image').addEventListener('click', () => {
+  this._cardImg.addEventListener('click', () => {
     this._openFullScreenPopup(this._name, this._link);
   })
 }
 
 generateCard() {
   this._element = this._getTemplate();
-  this._setEventListeners();
-
   this._cardImg = this._element.querySelector('.cards__item-image');
   this._cardImg.src = this._link;
   this._cardImg.alt = this._name;
   this._cardTitle = this._element.querySelector('.cards__item-caption');
   this._cardTitle.textContent = this._name;
 
+  this._setEventListeners();
+  
   return this._element;
 }
 
