@@ -1,21 +1,29 @@
+const Novo =new URL("../images/Pic_Novo.jpg", import.meta.url)
+const Karachaevo = new URL("../images//Pic_Karacha.jpg", import.meta.url)
+const Sochi =new URL("../images/Pic_Soci.jpg", import.meta.url)
+const Elbrus =new URL("../images/Pic_Elbrus.jpg", import.meta.url)
+const Psebai =new URL("../images/Pic_Psebai.jpg", import.meta.url)
+const Krasnodar =new URL("../images/Pic_Krasnodar.jpeg", import.meta.url)
+
+
 export const cardsArr = [
   {name: "Новороссийск",
-  link: "./images/Pic_Novo.jpg",},
+  link: Novo,},
 
   {name: "Карачаево-Черкессия",
-  link: "./images//Pic_Karacha.jpg",},
+  link: Karachaevo},
 
   {name: "Сочи",
-  link: "./images/Pic_Soci.jpg",},
+  link: Sochi},
 
   {name: "гора Эльбрус",
-  link: "./images/Pic_Elbrus.jpg",},
+  link: Elbrus},
 
   {name: "Краснодар",
-  link: "./images/Pic_Krasnodar.jpeg",},
+  link: Krasnodar},
 
   {name: "Псебай",
-  link: "https://pictures.s3.yandex.net/frontend-developer/cards-compressed/baikal.jpg",},
+  link: Psebai},
 ]
 
 export const validationConfig = {
