@@ -4,12 +4,13 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin'); 
 
 module.exports = {
-  entry: { main: './src/index.js' },
+  entry: { main: './src/page/index.js' },
   output: {
     path: path.resolve(__dirname, 'dist'),
     filename: 'main.js',
-        publicPath: ''
+        publicPath: '',
   },
+
   mode: 'development' ,
   devServer: {
     static: path.resolve(__dirname, './dist'), 
@@ -17,6 +18,7 @@ module.exports = {
     port: 8080, 
     open: true // сайт будет открываться сам при запуске npm run dev
   },
+
   module: {
     rules: [ // rules — это массив правил
         {
@@ -33,13 +35,8 @@ module.exports = {
         type: 'asset/resource'
       },
       {
-        // применять это правило только к CSS-файлам
-        test: /\.css$/,
-        // при обработке этих файлов нужно использовать
-        // MiniCssExtractPlugin.loader и css-loader
-        use: [MiniCssExtractPlugin.loader, {
-          loader: 'css-loader'
-        }]
+        test: /\.html$/i,
+        loader: "html-loader",
       },
       {
         // применять это правило только к CSS-файлам
@@ -48,11 +45,10 @@ module.exports = {
         // MiniCssExtractPlugin.loader и css-loader
         use: [MiniCssExtractPlugin.loader, {
           loader: 'css-loader',
-          options: { importLoaders: 1}
-        },
-          // Добавьте postcss-loader
-        'postcss-loader']
-      }, 
+          options: { importLoaders: 1 }
+        },'postcss-loader']
+      }
+   
     ]
   },
   plugins: [
