@@ -45,7 +45,6 @@ const userInfo = new UserInfo({
 
 //открыть редактирование формы - 9 пр //
 editProfile.addEventListener ('click', ()=>{
-const validatorEditProfile = new FormValidator(validationConfig, formProfile)
   popupEditProfile.openPopup()                                                         
   const user= userInfo.getUserInfo()
   nameInput.value = user.name 
@@ -91,7 +90,6 @@ function handleCardFormSubmit (inputValues) {
 }
 //откртыие формы добавления карточки//
 cardAdd.addEventListener ('click', ()=> {
-  formCard.reset()
   validatorCardAdd.resetValidation()
   popupAddCard.openPopup()
 })
