@@ -15,85 +15,95 @@ export default class Card {
       this._handleDeleteCard = handleDeleteCard;
       this._templateSelector = templateSelector;
     }
-  
-
+ 
+ 
   _getTemplate() {
     const cardElement = document
       .querySelector(this._templateSelector)
       .content.querySelector(".cards__item")
       .cloneNode(true);
-
+ 
     return cardElement;
-    
+ 
   }
-
+ 
   generateCard() {
     this._element = this._getTemplate();
-    
+ 
     this._cardImg = this._element.querySelector('.cards__item-image');
     this._cardImg.src = this._link;
     this._cardImg.alt = this._name;
     this._cardTitle = this._element.querySelector('.cards__item-caption');
     this._cardTitle.textContent = this._name;
-  
+ 
     this._setEventListeners();
     this.setLikes();
     this._checkUser();
-    
+ 
     return this._element;
   }
-
-
+ 
+ 
   setLikes() {
+ 
+    //this._likes = arr;
     this._likeSum = this._element.querySelector(".cards__item-like-sum");
     this._likeSum.textContent = this._likes.length;
-    
-    if(this.isLiked()){
-      this._like()
+ 
+ 
+    if (this.isLiked()) {
+ 
+      this._like();
     } else {
-      this._dislike()
+ 
+      this._dislike();
     }
   }
-
+ 
+ 
+ 
   _like() {
     this._likeBtn.classList.add("cards__item-like_active");
+ 
   }
-
+ 
   _dislike() {
-    this._likeBtn.classList.remove('place__like_active');
+    this._likeBtn.classList.remove('cards__item-like_active');
   }
-
+ 
   isLiked(){
-    const userLikedCard = this._likes.find(user => user._id === this._userId)
-    return userLikedCard
+    if (this._likes.find(user => user._id === this._userId)){
+      return true
+    } else return false
+   
   }
-
+ 
   remove() {
     this._element.remove();
     this._elementCard = null;
   }
-
+ 
   _setEventListeners() {
     this._trashBtn = this._element.querySelector('.cards__item-delete')
     this._trashBtn.addEventListener('click', () => {
     this._handleDeleteCard(this._cardId)
   })
-
+ 
     this._likeBtn = this._element.querySelector('.cards__item-like');  
     this._likeBtn.addEventListener('click', () => {
     this._handleLike(this._cardId);
   })
-
-   
+ 
+ 
     this._cardImg.addEventListener('click', () => {
     this._openFullScreenPopup(this._name, this._link);
   })
 }
-
+ 
   _checkUser() {
     if (this._ownerId !== this._userId) {
       this._trashBtn.remove();
   }
 }
-
+ 
 }
