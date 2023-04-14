@@ -6,6 +6,8 @@ export default class PopupWithForm extends Popup {
     this._handleFormSubmit = handleFormSubmit;
     this._popupForm = this._popup.querySelector('.popup__form');
     this._inputList = Array.from (this._popupForm.querySelectorAll('.popup__input'));
+    this._submitBtn = this._popup.querySelector(".popup__submit-btn");
+    this._submitBtnText = this._submitBtn.textContent;
   }
 
 //находим все данные ввода//
@@ -26,10 +28,21 @@ export default class PopupWithForm extends Popup {
     })
   };
 
+  renderLoading (isLoading, loadingText) {
+    if (isLoading) {
+      this._submitBtn.textContent = loadingText;
+    } else {
+      this._submitBtn.textContent = this._submitBtnText;
+    }
+  }
+
+
   closePopup(){
     super.closePopup();
     this._popupForm.reset();
   };
 
 }
+
+
 

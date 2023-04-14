@@ -35,13 +35,18 @@ export const validationConfig = {
   errorClass: 'popup__input-error_active',
 };
 
-export const editProfile = document.querySelector ('.profile__edit-button')
+export const avaEditBtn = document.querySelector('.profile__avatar-wrap')
+export const profileAvatar = document.querySelector('.profile__avatar')
+
+export const editProfileBtn = document.querySelector ('.profile__edit-button')
 export const profileName = document.querySelector ('.profile__info-title')
 export const profileJob = document.querySelector ('.profile__info-subtitle')
-export const cardAdd = document.querySelector ('.profile__add-button')
+
+
+export const cardAddBtn = document.querySelector ('.profile__add-button')
+export const cardPlace = document.querySelector ('.cards__list')
 
 export const templateCard = document.querySelector ('.template-cards').content.querySelector ('.cards__item') //обращаемся к template//
-export const cardPlace = document.querySelector ('.cards__list')
 export const cardName = templateCard.querySelector ('.cards__item-caption')
 
 
@@ -60,3 +65,12 @@ export const linkCardInput =popupCard.querySelector ('.popup__input_link')
 export const popupImage = document.querySelector ('.popup_image')
 export const popupImagePic = popupImage.querySelector('.popup__pic');
 export const popupImageCaption = popupImage.querySelector('.popup__pic-caption');
+
+export const popupAvatar = document.querySelector('.popup_avatar')
+export const formAvatar = document.forms['form-ava']
+
+
+export const popupDelete = document.querySelector('.popup_delete')
+export const formDelete = document.forms['form-delete'];
+
+

@@ -12,7 +12,9 @@
     </header>
     <main>
       <section class="profile">
-        <img class="profile__avatar" src="./images/Cousteau_image.jpg" alt="Аватарка">
+        <div class="profile__avatar-wrap">
+          <img class="profile__avatar" src="./images/Cousteau_image.jpg" alt="Аватарка">
+        </div>
         <div class="profile__info">
           <div class="profile__info-container">
             <h1 class="profile__info-title">Жак-Ив Кусто</h1>
@@ -44,7 +46,7 @@
           <form class="popup__form" name="form-profile" method="post" novalidate>
             <input id="form-name" class="popup__input popup__input_name" type="text" placeholder="Имя" name="name" minlength="2" maxlength="40" required>
               <span class="popup__input-error form-name-error" ></span>
-            <input id="form-job" class="popup__input popup__input_job" type="text" placeholder="Род деятельности" name="job" minlength="2" maxlength="40" required>
+            <input id="form-job" class="popup__input popup__input_job" type="text" placeholder="Род деятельности" name="about" minlength="2" maxlength="40" required>
               <span class="popup__input-error form-job-error" ></span>
             <button class="button popup__submit-btn" type="submit">Сохранить</button>
           </form>
@@ -58,9 +60,9 @@
         <button class="popup__close-btn" type="button" aria-label="Закрыть"></button>
         <h2 class="popup__heading">Новое&nbsp;место</h2>
         <form class="popup__form" name="form-card" method="post" novalidate>
-          <input id="form-title" class="popup__input popup__input_title" type="text" placeholder="Название" name="title"  minlength="2" maxlength="30" required>
+          <input id="form-title" class="popup__input popup__input_title" type="text" placeholder="Название" name="form-title"  minlength="2" maxlength="30" required>
             <span class="popup__input-error form-title-error" ></span>
-          <input id= "form-link" class="popup__input popup__input_link" type="url" placeholder="Ссылка на картинку" name="link" required>
+          <input id= "form-link" class="popup__input popup__input_link" type="url" placeholder="Ссылка на картинку" name="form-link" required>
             <span class="popup__input-error form-link-error" ></span>
           <button class="button popup__submit-btn" type="submit">Сохранить</button>
         </form>
@@ -77,6 +79,32 @@
         </div>
       </div>
 
+      <!--Popup delete-->
+
+      <div class="popup popup_delete">
+        <div class="popup__container">
+          <button class="popup__close-btn" type="button" aria-label="Закрыть"></button>
+          <h2 class="popup__heading">Вы уверены?</h2>
+          <form class="popup__form popup__form_type_delete" name ="form-delete" method="post" novalidate>
+            <button class="button popup__submit-btn" type="submit">Да</button>
+          </form>
+        </div>
+      </div>
+
+      <!--Popup avatar-->
+
+      <div class="popup popup_avatar">
+        <div class="popup__container">
+          <button class="popup__close-btn" type="button" aria-label="Закрыть"></button>
+          <h2 class="popup__heading">Обновить аватар</h2>
+          <form class="popup__form" name="form-ava" method="post" novalidate>
+            <input id= "form-ava" class="popup__input popup__input_ava" type="url" placeholder="Ссылка на аватар" name="avatar" required>
+              <span class="popup__input-error form-ava-error" ></span>
+            <button class="button popup__submit-btn" type="submit">Сохранить</button>
+          </form>
+        </div>
+      </div>
+
       
     <!--template-->
 
@@ -86,7 +114,10 @@
         <img class="cards__item-image" src="#" alt="Новороссийск">
         <div class="cards__item-info">
           <h2 class="cards__item-caption"></h2>
-          <button class="cards__item-like" type="button"></button>
+          <div class="cards__item-likes">
+            <button class="cards__item-like" type="button"></button>
+            <p class="cards__item-like-sum">0</p>
+          </div>
         </div>
       </li>
     </template>

@@ -7,4 +7,6 @@
   text-overflow: ellipsis;
   white-space: nowrap;
   overflow: hidden;
+  min-width: 215px;
 }
+  

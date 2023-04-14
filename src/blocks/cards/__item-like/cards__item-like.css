@@ -4,7 +4,8 @@
   background-position: center;
   background-repeat: no-repeat;
   border: none;
-  max-width: 22px;
+  min-width: 22px;
+  min-height: 19px;
   width: 100%;
   padding: 0;
   cursor: pointer;
