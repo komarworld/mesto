@@ -159,19 +159,16 @@ const createCard = (data) => {
         if (card.isLiked()){ 
           api.deleteLike(cardId)
             .then((res) => {
-              for (const property in res) {
-                console.log(`${property}: ${res[property]}`);
-              }
-              card._likes = res; // Update the card's likes
-              card.setLikes(); // Refresh the likes count
+              console.log (res)
+              card.setLikes(res); // Refresh the likes count
             })
             .catch((err) => console.log(err));
         } else { 
           api
             .addLike(cardId)
-            .then(res => { 
-              card._likes = res; // Update the card's likes
-              card.setLikes(); // Refresh the likes count
+            .then((res) => { 
+               // Update the card's likes
+              card.setLikes(res); // Refresh the likes count
             })
             .catch((err) => console.log(err));
         }    

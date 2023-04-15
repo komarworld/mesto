@@ -14,6 +14,7 @@ export default class Card {
       this._handleLike = handleLike;
       this._handleDeleteCard = handleDeleteCard;
       this._templateSelector = templateSelector;
+    
     }
  
  
@@ -37,16 +38,15 @@ export default class Card {
     this._cardTitle.textContent = this._name;
  
     this._setEventListeners();
-    this.setLikes();
+    this.setLikes(this._likes);
     this._checkUser();
  
     return this._element;
   }
  
  
-  setLikes() {
- 
-    //this._likes = arr;
+  setLikes(likeArr) {
+    this._likes = likeArr// Save likes to class field
     this._likeSum = this._element.querySelector(".cards__item-like-sum");
     this._likeSum.textContent = this._likes.length;
  
