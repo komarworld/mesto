@@ -86,7 +86,7 @@ export default class Card {
   _setEventListeners() {
     this._trashBtn = this._element.querySelector('.cards__item-delete')
     this._trashBtn.addEventListener('click', () => {
-    this._handleDeleteCard(this._cardId)
+    this._handleDeleteCard(this._cardId, this)
   })
  
     this._likeBtn = this._element.querySelector('.cards__item-like');  

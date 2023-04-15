@@ -170,9 +170,6 @@ const createCard = (data) => {
           api
             .addLike(cardId)
             .then(res => { 
-              for (const property in res) {
-                console.log(`${property}: ${res[property]}`);
-              }
               card._likes = res; // Update the card's likes
               card.setLikes(); // Refresh the likes count
             })
@@ -180,11 +177,11 @@ const createCard = (data) => {
         }    
       },
  
-      handleDeleteCard: (cardId, cards) => {
-        popupDeleteCard.openPopup(cardId, cards);
-        popupDeleteCard.handleSubmitAction((data) => {
+      handleDeleteCard: (cardId, card) => {
+        popupDeleteCard.open(cardId, card);
+        popupDeleteCard.handleSubmitAction(() => {
           api
-            .deleteCard(data.cardId)
+            .deleteCard(cardId)
             .then(() => {
               popupDeleteCard.closePopup();
               card.remove();
@@ -214,6 +211,27 @@ popupWithImage.setEventListeners();
 const openFullScreenPopup = (name, link) => {
   popupWithImage.openPopup(name, link)
   };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -248,11 +266,6 @@ function handleCardFormSubmit (inputValues) {
   sectionWithCards.addItem(cardElement);
  
 }
-
-
-
-
-
 
 
 

@@ -69,7 +69,8 @@ export default class Api {
     return fetch(`${this._url}/cards/${cardId}`, {
       method: "DELETE",
       headers: this._headers,
-    }).then((res) => this._checkResponseStatus(res));
+    }).then((res) => this._checkResponseStatus(res))
+    
   }
  
   addLike(cardId) {
@@ -78,7 +79,7 @@ export default class Api {
       headers: this._headers,
     }).then((res) => this._checkResponseStatus(res))
     .then((data) => {
-      return data.likes; // Make sure to return the updated likes array
+      return data.likes; 
     });
   }
  
@@ -88,7 +89,7 @@ export default class Api {
       headers: this._headers,
     }).then((res) => this._checkResponseStatus(res))
     .then((data) => {
-      return data.likes; // Make sure to return the updated likes array
+      return data.likes; 
     });
   }
  
